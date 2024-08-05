@@ -6,11 +6,10 @@ lists = [
 ]
 
 
-
-def filter_by_state(lists : list[dict], state="EXECUTED") -> list[dict]:
+def filter_by_state(lists: list[dict], state="EXECUTED") -> list[dict]:
     """Функция возвращает новый список словарей, содержащий только те словари, у которых ключ state соответствует указанному значению"""
 
-    new_list=[]
+    new_list = []
 
     for i in lists:
         if i.get("state") == state:
@@ -21,7 +20,8 @@ def filter_by_state(lists : list[dict], state="EXECUTED") -> list[dict]:
 print(filter_by_state(lists))
 print(filter_by_state(lists, "CANCELED"))
 
-def sort_by_date(lists: list[dict], order: bool=True) -> list[dict]:
+
+def sort_by_date(lists: list[dict], order: bool = True) -> list[dict]:
     """Функция, которая принимает список словарей и необязательный параметр, задающий порядок сортировки"""
     sorted_list = sorted(lists, key=lambda x: x["date"], reverse=order)
     return sorted_list
