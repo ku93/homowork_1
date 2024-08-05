@@ -4,11 +4,12 @@ lists = [
     {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
     {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
 ]
-new_list = []
 
 
-def filter_by_state(lists, state="EXECUTED") -> list:
+
+def filter_by_state(lists : list[dict], state="EXECUTED") -> list[dict]:
     """Функция возвращает новый список словарей, содержащий только те словари, у которых ключ state соответствует указанному значению"""
+    new_list = []
     for i in lists:
         if i["state"] == "EXECUTED":
             new_list.append(i)
@@ -19,9 +20,9 @@ def filter_by_state(lists, state="EXECUTED") -> list:
 print(filter_by_state(lists))
 
 
-def sort_by_date(lists, state="EXECUTED") -> list:
+def sort_by_date(lists: list[dict], order=True) -> list[dict]:
     """Функция, которая принимает список словарей и необязательный параметр, задающий порядок сортировки"""
-    sorted_list = sorted(lists, key=lambda x: x["date"], reverse=True)
+    sorted_list = sorted(lists, key=lambda x: x["date"], reverse=order)
     return sorted_list
 
 
