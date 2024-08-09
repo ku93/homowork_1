@@ -31,5 +31,3 @@ def get_data(data_inp: str) -> str:
     data = data_sp[0].split("-")
     new_data = ".".join(reversed(data))
     return new_data
-
-
