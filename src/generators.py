@@ -73,7 +73,7 @@ def card_number_generator(start: int, end) -> int:
     end_int = int(end.replace(" ", ""))
 
     for number in range(start_int, end_int + 1):
-        card_number = f"{number:016d}"  # Форматируем как 16-значное число с ведущими нулями
+        card_number = f"{number:016d}"
         formatted_card_number = f"{card_number[:4]} {card_number[4:8]} {card_number[8:12]} {card_number[12:]}"
         yield formatted_card_number
 

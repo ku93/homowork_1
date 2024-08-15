@@ -1,3 +1,6 @@
+import logging
+
+
 def get_mask_card_number(card_number: str) -> str:
     """Функция, которая создает маску карты"""
     if card_number == "":
