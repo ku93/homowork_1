@@ -17,7 +17,7 @@ def get_transactions(absolute_path):
     except FileNotFoundError:
         return []
     except json.JSONDecodeError:
-        raise ValueError("Файл не является JSON-файлом")
+        raise ValueError([])
 
 
 tr = get_transactions(absolute_path)

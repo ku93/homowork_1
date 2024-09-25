@@ -20,4 +20,4 @@ def test_get_transactions_3():
     try:
         result=get_transactions("'")
     except ValueError:
-        assert result == 'Файл не является JSON-файлом'
+        assert result == []
