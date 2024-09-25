@@ -1,0 +1,9 @@
+Function func_and_file started
+Function func_and_file finished
+Result: 1.0
+
+Function func_and_file started
+Function func_and_file finished by error:
+<class 'ZeroDivisionError'>: division by zero
+Parameters - args: (2, 0), kwargs: {}
+
