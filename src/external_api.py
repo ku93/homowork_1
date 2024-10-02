@@ -9,7 +9,8 @@ absolute_path = os.getenv("absolute_path")
 
 
 def convert(transaction):
-    """Функция, которая принимает на вход транзакцию и возвращает сумму транзакции (amount) в рублях, тип данных — float"""
+    """Функция, которая принимает на вход транзакцию и возвращает сумму транзакции (amount) в рублях,
+     тип данных — float"""
     if transaction["operationAmount"]["currency"]["code"] == "RUB":
         return float(transaction["operationAmount"]["amount"])
     elif transaction["operationAmount"]["currency"]["code"] == "USD":
@@ -22,7 +23,7 @@ def convert(transaction):
         return float(round(result["result"], 2))
     elif transaction["operationAmount"]["currency"]["code"] == []:
         return []
-    elif transaction["operationAmount"]["currency"]["code"] == None:
+    elif transaction["operationAmount"]["currency"]["code"] is None:
         return []
 
 
