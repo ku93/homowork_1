@@ -34,4 +34,3 @@ def get_transactions(absolute_path):
 
 tr = get_transactions(absolute_path)
 print(tr)
-

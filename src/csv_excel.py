@@ -1,4 +1,4 @@
-import  pandas as pd
+import pandas as pd
 import logging
 
 logger = logging.getLogger("csv_excel")
@@ -9,6 +9,8 @@ file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 
 csv_path = "..//data/transactions.csv"
+
+
 def get_transactions_csv():
     """Функция, которая принимает на вход путь к csv"""
     try:
@@ -25,10 +27,13 @@ def get_transactions_csv():
         logger.error(f"Произошла непредвиденная ошибка - {ex}")
         return pd.DataFrame()  # Возвращаем пустой DataFrame вместо списка
 
+
 tg = get_transactions_csv()
 print(tg.head())
 
 excel_path = "../data/transactions_excel.xlsx"
+
+
 def get_transactions_excel():
     """Функция, которая принимает на вход путь к excel"""
     try:
@@ -45,5 +50,6 @@ def get_transactions_excel():
         logger.error(f"Произошла непредвиденная ошибка - {ex}")
         return pd.DataFrame()  # Возвращаем пустой DataFrame вместо списка
 
-ex=get_transactions_excel()
+
+ex = get_transactions_excel()
 print(ex.head())
