@@ -45,6 +45,10 @@ pip install -r requirements.txt
 Генератор transaction_descriptions принимает список словарей с транзакциями и возвращает описание каждой операции по очереди.
 
 Генератор card_number_generator может сгенерировать номера карт в заданном диапазоне
+
+Функция -get_transactions_csv принимает на вход путь к csv
+
+Функция get_transactions_excel принимает на вход путь к excel
 ## Тестирование
 
 Для запуска тестов используйте: pytest
@@ -53,4 +57,4 @@ pip install -r requirements.txt
 Ткачев Леонид Андреевич [e-mail] (tkachev1993adg@yandex.ru)
 
 ## Версия
-от 09.08.2024 г.
+от 06.10.2024 г.
