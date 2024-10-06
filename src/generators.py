@@ -30,7 +30,8 @@ transactions = [
 
 
 def filter_by_currency(transactions: list[dict], currency_cod) -> list[dict]:
-    "Функция, которая возвращает итератор, который поочередно выдает транзакции, где валюта операции соответствует заданной"
+    """Функция, которая возвращает итератор, который поочередно выдает транзакции, где валюта операции соответствует
+    заданной"""
     if transactions:
         for transaction in transactions:
             if transaction["operationAmount"]["currency"]["code"] == currency_cod:
