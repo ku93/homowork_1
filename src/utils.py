@@ -23,7 +23,8 @@ def get_transactions(absolute_path):
 
         with open(absolute_path, encoding="utf-8") as file:
             data = json.load(file)
-            return data if type(data) is list else []
+            return  data
+
     except FileNotFoundError as ex:
         logger.error(f"Произошла ошибка: {ex}")
         return []
@@ -32,5 +33,5 @@ def get_transactions(absolute_path):
         return []
 
 
-tr = get_transactions(absolute_path)
-print(tr)
+# tr = get_transactions(absolute_path)
+# print(tr)
