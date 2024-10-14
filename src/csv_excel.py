@@ -1,6 +1,6 @@
-import pandas as pd
-import csv
 import logging
+
+import pandas as pd
 
 logger = logging.getLogger("csv_excel")
 logger.setLevel(logging.DEBUG)
@@ -29,6 +29,7 @@ def get_transactions_csv(file):
         logger.error(f"Произошла непредвиденная ошибка - {ex}")
         return pd.DataFrame()  # Возвращаем пустой DataFrame вместо списка
 
+
 # c = get_transactions_csv(csv_path)
 # print(c)
 
@@ -40,7 +41,7 @@ def get_transactions_excel(file):
     try:
         logger.info("Открываем файл excel")
         excel_data = pd.read_excel(excel_path)
-        return excel_data.to_dict(orient = "records")
+        return excel_data.to_dict(orient="records")
     except FileNotFoundError as ex:
         logger.error(f"Произошла ошибка: файл не найден - {ex}")
         return pd.DataFrame()  # Возвращаем пустой DataFrame вместо списка

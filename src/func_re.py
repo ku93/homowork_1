@@ -1,9 +1,11 @@
-import re
 import collections
 import os
-from src.utils import get_transactions
-from src.csv_excel import get_transactions_csv, get_transactions_excel
+import re
+
 from dotenv import load_dotenv
+
+from src.csv_excel import get_transactions_csv, get_transactions_excel
+from src.utils import get_transactions
 
 load_dotenv()
 absolute_path = os.getenv("absolute_path")
@@ -19,19 +21,21 @@ def search_transactions(transactions: list[dict], search_string: str) -> list[di
     result = []
     pattern = re.compile(re.escape(search_string), re.IGNORECASE)
     for transaction in transactions:
-        desc = transaction.get('description', "")
+        desc = transaction.get("description", "")
         if type(desc) and type(desc) is not str:
             pass
-        elif re.search(pattern,desc):
+        elif re.search(pattern, desc):
             result.append(transaction)
     return result
+
 
 # t = search_transactions(excel_file, 'Перевод организации')
 # print(t)
 
+
 def get_count_transactions(transactions: list[dict], user_categories: list) -> dict:
-    """Функция принимает список словарей с данными о банковских операциях и список категорий операций,
-а возвращает словарь, в котором ключи — это названия категорий, а значения — это количество операций в каждой категории."""
+    """Функция принимает список словарей с данными о банковских операциях и список категорий операций, а возвращает
+    словарь, в котором ключи — это названия категорий, а значения — это количество операций в каждой категории."""
     descriptions = []
     category = []
     count = []
@@ -43,10 +47,11 @@ def get_count_transactions(transactions: list[dict], user_categories: list) -> d
         category.append(cat)
 
         for description in descriptions:
-            d=str(description)
+            d = str(description)
             if cat.lower() == d.lower():
                 count.append(cat)
     return dict(collections.Counter(count))
+
 
 # g = get_count_transactions(excel_file, ["Перевод организации", "открытие вклада", "Перевод со счета на счет"])
 # print(g)

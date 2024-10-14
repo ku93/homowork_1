@@ -1,14 +1,16 @@
 import os
 
 import requests
-from src.utils import get_transactions
 from dotenv import load_dotenv
+
+from src.utils import get_transactions
 
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
 absolute_path = os.getenv("absolute_path")
 
 ap = get_transactions(absolute_path)
+
 
 def convert(transactions):
     """Функция, которая принимает на вход транзакцию и возвращает сумму транзакции (amount) в рублях,

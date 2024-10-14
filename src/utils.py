@@ -16,14 +16,14 @@ logger.addHandler(file_handler)
 
 
 def get_transactions(absolute_path):
-    """Функция, которая принимает на вход путь до JSON-файла и возвращает список словарей с данными о финансовых
+    """Функция которая принимает на вход путь до JSON-файла и возвращает список словарей с данными о финансовых
     транзакциях. Если файл пустой, содержит не список или не найден, функция возвращает пустой список"""
     try:
         logger.info("Открываем файл JSON файл")
 
         with open(absolute_path, encoding="utf-8") as file:
             data = json.load(file)
-            return  data
+            return data
 
     except FileNotFoundError as ex:
         logger.error(f"Произошла ошибка: {ex}")

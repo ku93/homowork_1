@@ -6,7 +6,7 @@ list_of_dictionary = [
 ]
 
 
-def filter_by_state(list_of_dictionary: list[dict], state = "EXECUTED"):
+def filter_by_state(list_of_dictionary: list[dict], state="EXECUTED"):
     """Принимает список словарей  и опционально параметр, возвращает новый список словарей"""
     list_by_state = []
     for dictionary in list_of_dictionary:
