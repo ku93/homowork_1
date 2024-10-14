@@ -2,15 +2,15 @@ import re
 import collections
 import os
 from src.utils import get_transactions
-from src.csv_excel import reader_csv, reader_excel
+from src.csv_excel import get_transactions_csv, get_transactions_excel
 from dotenv import load_dotenv
 
 load_dotenv()
 absolute_path = os.getenv("absolute_path")
 
 json_file = get_transactions(absolute_path)
-csv_file = reader_csv("..//data/transactions.csv")
-excel_file = reader_excel("..//data/transactions_excel.xlsx")
+csv_file = get_transactions_csv("..//data/transactions.csv")
+excel_file = get_transactions_excel("..//data/transactions_excel.xlsx")
 
 
 def search_transactions(transactions: list[dict], search_string: str) -> list[dict]:
