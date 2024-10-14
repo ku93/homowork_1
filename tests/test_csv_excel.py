@@ -1,7 +1,6 @@
-import unittest
 from unittest.mock import Mock, patch
+
 import pandas as pd
-import logging
 
 from src.csv_excel import get_transactions_csv, get_transactions_excel
 

@@ -1,8 +1,8 @@
 import os
-import pandas as pd
+
 from dotenv import load_dotenv
 
-from src.utils import get_transactions, get_transactions_csv
+from src.utils import get_transactions
 
 load_dotenv()
 absolute_path = os.getenv("absolute_path")

@@ -1,4 +1,4 @@
-lists = [
+list_of_dictionary = [
     {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
     {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
     {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
@@ -6,20 +6,17 @@ lists = [
 ]
 
 
-def filter_by_state(lists: list[dict], state="EXECUTED") -> list[dict]:
-    """Функция возвращает новый список словарей, содержащий только те словари, у которых ключ state соответствует
-    указанному значению"""
-
-    new_list = []
-
-    for i in lists:
-        if i.get("state") == state:
-            new_list.append(i)
-    return new_list
+def filter_by_state(list_of_dictionary: list[dict], state="EXECUTED"):
+    """Принимает список словарей  и опционально параметр, возвращает новый список словарей"""
+    list_by_state = []
+    for dictionary in list_of_dictionary:
+        if dictionary.get("state") == state:
+            list_by_state.append(dictionary)
+    return list_by_state
 
 
-print(filter_by_state(lists))
-print(filter_by_state(lists, "CANCELED"))
+# print(filter_by_state(list_of_dictionary))
+# print(filter_by_state(list_of_dictionary, "CANCELED"))
 
 
 def sort_by_date(lists: list[dict], order: bool = True) -> list[dict]:
@@ -28,4 +25,4 @@ def sort_by_date(lists: list[dict], order: bool = True) -> list[dict]:
     return sorted_list
 
 
-print(sort_by_date(lists))
+# print(sort_by_date(list_of_dictionary))

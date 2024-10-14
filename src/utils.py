@@ -9,21 +9,22 @@ absolute_path = os.getenv("absolute_path")
 
 logger = logging.getLogger("utils")
 logger.setLevel(logging.DEBUG)
-file_handler = logging.FileHandler("../logs/utils.log", mode="w")
+file_handler = logging.FileHandler(r"C:\Users\tkach\OneDrive\Рабочий стол\учебные проекты\скайпро\модуль 2\9.1 Poetry. Оформление кода\homework_1\logs\utils.log", mode="w")
 file_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s: %(message)s")
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 
 
 def get_transactions(absolute_path):
-    """Функция, которая принимает на вход путь до JSON-файла и возвращает список словарей с данными о финансовых
+    """Функция которая принимает на вход путь до JSON-файла и возвращает список словарей с данными о финансовых
     транзакциях. Если файл пустой, содержит не список или не найден, функция возвращает пустой список"""
     try:
         logger.info("Открываем файл JSON файл")
 
         with open(absolute_path, encoding="utf-8") as file:
             data = json.load(file)
-            return data if type(data) is list else []
+            return data
+
     except FileNotFoundError as ex:
         logger.error(f"Произошла ошибка: {ex}")
         return []
@@ -32,5 +33,5 @@ def get_transactions(absolute_path):
         return []
 
 
-tr = get_transactions(absolute_path)
-print(tr)
+# tr = get_transactions(absolute_path)
+# print(tr)
